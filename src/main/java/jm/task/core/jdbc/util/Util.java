@@ -5,13 +5,16 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
+    private Util() {
+    }
+
     // реализуйте настройку соеденения с БД
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/mydbtest";
     private static final String DB_USERNAME = "root";
     private static final String DB_PASSWORD = "root";
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName(DB_DRIVER);
